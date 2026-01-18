@@ -1,0 +1,51 @@
+let totalInCent = 0;
+
+const stickerButton = document.querySelector("#sticker");
+const keychainButton = document.querySelector("#keychain");
+const plushButton = document.querySelector("#plush");
+const comicButton = document.querySelector("#comic");
+const mysteryButton = document.querySelector("#mystery");
+
+
+const shoppingCart = document.querySelector("#shopping-cart");
+const totalSpan = document.querySelector("#total-span");
+
+const updateTotal = () => {
+    totalInSpan.textContent = (totalInCent / 100) .toFixed(2);
+}
+
+const addSticker = () => {
+    shoppingCart.innerHTML += '<p>⭐️ Sticker Pack</p>';
+    totalInCent += 50;
+    updateTotal();
+}
+
+const addKeychain = () => {
+    shoppingCart.innerHTML += '<p>🔑 Keychain</p>';
+    totalInCent += 150;
+    updateTotal();
+}
+
+const addPlush = () => {
+    shoppingCart.innerHTML += '<p>🧸 Mini Plush</p>';
+    totalInCent += 400;
+    updateTotal();
+}
+
+const addComic = () => {
+    shoppingCart.innerHTML += '<p>📚 Comic Book</p>';
+    totalInCent += 275;
+    updateTotal();
+}
+
+const addMystery = () => {
+    shoppingCart.innerHTML += '<p>🎁 Mystery Box</p>';
+    totalInCent += 325;
+    updateTotal();
+}
+
+stickerButton.addEventListener("click", addSticker);
+keychainButton.addEventListener("click", addKeychain);
+plushButton.addEventListener("click", addPlush);
+comicButton.addEventListener("click", addComic);
+mysteryButton.addEventListener("click", addMystery);
